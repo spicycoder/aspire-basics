@@ -1,0 +1,25 @@
+services:
+  ordersservice:
+    image: ${DOCKER_REGISTRY-}ordersservice
+    build:
+      context: .
+      dockerfile: OrdersService/Dockerfile
+    ports:
+      - "8181:8080"
+
+  paymentservice:
+    image: ${DOCKER_REGISTRY-}paymentservice
+    build:
+      context: .
+      dockerfile: PaymentService/Dockerfile
+    ports:
+      - "8282:8080"
+
+  sales-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: Sales.Db
+    environment:
+      - SA_PASSWORD=helloWorld18
+      - ACCEPT_EULA=Y
+    ports:
+      - 1433:1433
