@@ -4,6 +4,9 @@ services:
     build:
       context: .
       dockerfile: OrdersService/Dockerfile
+    environment:
+        - OTEL_EXPORTER_OTLP_ENDPOINT=http://aspire-dashboard:18889
+        - OTEL_SERVICE_NAME=OrdersService.Api
     ports:
       - "8181:8080"
 
@@ -12,6 +15,9 @@ services:
     build:
       context: .
       dockerfile: PaymentService/Dockerfile
+    environment:
+        - OTEL_EXPORTER_OTLP_ENDPOINT=http://aspire-dashboard:18889
+        - OTEL_SERVICE_NAME=PaymentService.Api
     ports:
       - "8282:8080"
 
@@ -23,3 +29,9 @@ services:
       - ACCEPT_EULA=Y
     ports:
       - 1433:1433
+
+  aspire-dashboard:
+    image: mcr.microsoft.com/dotnet/aspire-dashboard:latest
+    container_name: dashboard
+    ports:
+      - 18888:18888
