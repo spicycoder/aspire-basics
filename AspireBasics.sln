@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7EED6A7C-F3B1-4DAA-8E1C-CE3855793629}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspireBasics.AppHost", "AspireBasics.AppHost\AspireBasics.AppHost.csproj", "{126F2641-CAA2-4031-9F8E-65B9CCECD701}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireBasics.ServiceDefaults", "AspireBasics.ServiceDefaults\AspireBasics.ServiceDefaults.csproj", "{B06562DA-F0DB-429C-907F-2D5148C874FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{7EED6A7C-F3B1-4DAA-8E1C-CE3855793629}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EED6A7C-F3B1-4DAA-8E1C-CE3855793629}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EED6A7C-F3B1-4DAA-8E1C-CE3855793629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{126F2641-CAA2-4031-9F8E-65B9CCECD701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{126F2641-CAA2-4031-9F8E-65B9CCECD701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{126F2641-CAA2-4031-9F8E-65B9CCECD701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{126F2641-CAA2-4031-9F8E-65B9CCECD701}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B06562DA-F0DB-429C-907F-2D5148C874FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B06562DA-F0DB-429C-907F-2D5148C874FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B06562DA-F0DB-429C-907F-2D5148C874FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B06562DA-F0DB-429C-907F-2D5148C874FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

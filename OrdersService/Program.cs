@@ -5,18 +5,21 @@ using DataAccess;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.AddServiceDefaults();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<SalesDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SalesDbConnection")));
 
+builder.AddSqlServerDbContext<SalesDbContext>("SalesDbConnection");
 builder.Services.AddHttpClient("PaymentService", client =>
 {
-    client.BaseAddress = new Uri("http://paymentservice:8080");
+    client.BaseAddress = new Uri("http://paymentservice");
 });
 
 var app = builder.Build();
+
+app.MapDefaultEndpoints();
 
 if (app.Environment.IsDevelopment())
 {
