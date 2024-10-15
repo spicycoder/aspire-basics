@@ -6,20 +6,18 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddServiceDefaults();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.AddSqlServerDbContext<SalesDbContext>("SalesDbConnection");
+builder.Services.AddDbContext<SalesDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SalesDbConnection")));
 builder.Services.AddHttpClient("PaymentService", client =>
 {
-    client.BaseAddress = new Uri("http://paymentservice");
+    client.BaseAddress = new Uri("http://paymentservice:8080");
 });
 
 var app = builder.Build();
-
-app.MapDefaultEndpoints();
 
 if (app.Environment.IsDevelopment())
 {

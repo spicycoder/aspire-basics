@@ -1,15 +1,12 @@
 using AspNetCore.Swagger.Themes;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.AddServiceDefaults();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.MapDefaultEndpoints();
 
 if (app.Environment.IsDevelopment())
 {
